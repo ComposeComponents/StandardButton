@@ -1,4 +1,4 @@
-# Units
+# Standard Button
 [![Build](https://github.com/ComposeComponents/StandardButton/actions/workflows/build.yml/badge.svg)](https://github.com/ComposeComponents/StandardButton/actions/workflows/build.yml)
 [![Lint](https://github.com/ComposeComponents/StandardButton/actions/workflows/lint.yml/badge.svg)](https://github.com/ComposeComponents/StandardButton/actions/workflows/lint.yml)
 
