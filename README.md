@@ -1,23 +1,23 @@
 # Units
-[![Build](https://github.com/ComposeComponents/Units/actions/workflows/build.yml/badge.svg)](https://github.com/ComposeComponents/Units/actions/workflows/build.yml)
-[![Lint](https://github.com/ComposeComponents/Units/actions/workflows/lint.yml/badge.svg)](https://github.com/ComposeComponents/Units/actions/workflows/lint.yml)
+[![Build](https://github.com/ComposeComponents/StandardButton/actions/workflows/build.yml/badge.svg)](https://github.com/ComposeComponents/StandardButton/actions/workflows/build.yml)
+[![Lint](https://github.com/ComposeComponents/StandardButton/actions/workflows/lint.yml/badge.svg)](https://github.com/ComposeComponents/StandardButton/actions/workflows/lint.yml)
 
-A helper library for defining spacing and textsizes as a multiple of some base unit (default 16dp/16sp).
+A widget library for generically defining primary/secondary/tertiary button styles.
 
 ## Installation
-![Stable](https://img.shields.io/github/v/release/ComposeComponents/Units?label=Stable)
-![Preview](https://img.shields.io/github/v/release/ComposeComponents/Units?label=Preview&include_prereleases)
+![Stable](https://img.shields.io/github/v/release/ComposeComponents/StandardButton?label=Stable)
+![Preview](https://img.shields.io/github/v/release/ComposeComponents/StandardButton?label=Preview&include_prereleases)
 
 ```
-implementation "cl.emilym.compose:units:<latest>"
+implementation "cl.emilym.compose:standardbutton:<latest>"
 ```
 
 ## Usage
 ```kotlin
-CompositionLocalProvider(
-    LocalBaseDp provides 8.dp
+StandardButton(
+    type = ButtonType.PRIMARY,
+    onClick = {}
 ) {
-    // Box is sized to 8dp by 8dp
-    Box(Modifier.size(2.rdp))
+    Text("This is a test of the button")
 }
 ```
