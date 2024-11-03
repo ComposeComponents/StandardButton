@@ -1,5 +1,5 @@
 # Standard Button
-[![Build](https://github.com/ComposeComponents/StandardButton/actions/workflows/build.yml/badge.svg)](https://github.com/ComposeComponents/StandardButton/actions/workflows/build.yml)
+[![Build](https://github.com/ComposeComponents/StandardButton/actions/workflows/build-library.yml/badge.svg)](https://github.com/ComposeComponents/StandardButton/actions/workflows/build-library.yml)
 [![Lint](https://github.com/ComposeComponents/StandardButton/actions/workflows/lint.yml/badge.svg)](https://github.com/ComposeComponents/StandardButton/actions/workflows/lint.yml)
 
 A widget library for generically defining primary/secondary/tertiary button styles.
