@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
+// Used if no ButtonStyle has been provided
 @PublishedApi
 internal val primary
     @Composable
