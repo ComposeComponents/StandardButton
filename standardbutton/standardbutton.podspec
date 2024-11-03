@@ -6,15 +6,15 @@ Pod::Spec.new do |spec|
     spec.authors                  = ''
     spec.license                  = ''
     spec.summary                  = 'A widget library for generically defining primary/secondary/tertiary button styles.'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/units.framework'
+    spec.vendored_frameworks      = 'build/cocoapods/framework/standardbutton.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '16.0'
                 
                 
-    if !Dir.exist?('build/cocoapods/framework/units.framework') || Dir.empty?('build/cocoapods/framework/units.framework')
+    if !Dir.exist?('build/cocoapods/framework/standardbutton.framework') || Dir.empty?('build/cocoapods/framework/standardbutton.framework')
         raise "
 
-        Kotlin framework 'units' doesn't exist yet, so a proper Xcode project can't be generated.
+        Kotlin framework 'standardbutton' doesn't exist yet, so a proper Xcode project can't be generated.
         'pod install' should be executed after running ':generateDummyFramework' Gradle task:
 
             ./gradlew :standardbutton:generateDummyFramework
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
                 
     spec.pod_target_xcconfig = {
         'KOTLIN_PROJECT_PATH' => ':standardbutton',
-        'PRODUCT_MODULE_NAME' => 'units',
+        'PRODUCT_MODULE_NAME' => 'standardbutton',
     }
                 
     spec.script_phases = [

@@ -35,7 +35,7 @@ kotlin {
         version = findProperty("version") as String
         ios.deploymentTarget = "16.0"
         framework {
-            baseName = "units"
+            baseName = "standardbutton"
             isStatic = true
         }
     }
