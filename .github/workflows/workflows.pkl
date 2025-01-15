@@ -1,9 +1,22 @@
-amends "package://components.emilym.cl/actions/actions@0.1.8#/render.pkl"
+amends "package://components.emilym.cl/actions/actions@0.1.14#/render.pkl"
+import "package://components.emilym.cl/actions/actions@0.1.14#/common/target.pkl" as target
 
 _modules = new Listing {
     "standardbutton"
 }
 workflows = new Listing {
-    import("package://components.emilym.cl/actions/actions@0.1.8#/build-kmp-lib.pkl")
-    import("package://components.emilym.cl/actions/actions@0.1.8#/lint.pkl")
+    (import("package://components.emilym.cl/actions/actions@0.1.14#/build-kmp-lib.pkl")) {
+        targets = new Listing {
+            target.buildIosMultiplatformTarget("standardbutton", "x64")
+            target.buildIosMultiplatformTarget("standardbutton", "arm64")
+            target.buildIosMultiplatformTarget("standardbutton", "simulatorArm64")
+            target.buildDarwinMultiplatformTarget("standardbutton", "macos", "x64")
+            target.buildDarwinMultiplatformTarget("standardbutton", "macos", "arm64")
+            target.buildAndroidMultiplatformTarget("standardbutton")
+            target.buildJvmMultiplatformTarget("standardbutton")
+            target.buildWasmJsMultiplatformTarget("standardbutton")
+            target.buildJsMultiplatformTarget("standardbutton")
+        }
+    }
+    import("package://components.emilym.cl/actions/actions@0.1.13#/lint.pkl")
 }
