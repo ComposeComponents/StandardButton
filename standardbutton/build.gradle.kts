@@ -2,6 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import com.vanniktech.maven.publish.SonatypeHost
 import com.vanniktech.maven.publish.KotlinMultiplatform
 import com.vanniktech.maven.publish.JavadocJar
+import org.gradle.internal.os.OperatingSystem
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -16,18 +18,39 @@ plugins {
 val desc = "A widget library for generically defining primary/secondary/tertiary button styles."
 
 kotlin {
-    androidTarget {
-        compilations.all {
-            compileTaskProvider.configure {
-                compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_1_8)
+    val currentOs = OperatingSystem.current()
+    val strictBuild: Boolean by project.extra {
+        (project.findProperty("build.strictPlatform") as? String)?.toBooleanStrictOrNull() ?: false
+    }
+
+    if (!strictBuild || currentOs.isLinux) {
+        androidTarget {
+            publishLibraryVariants("release")
+            compilations.all {
+                compileTaskProvider.configure {
+                    compilerOptions {
+                        jvmTarget.set(JvmTarget.JVM_11)
+                    }
                 }
             }
         }
+        jvm()
+
+        js(IR) {
+            browser()
+            useCommonJs()
+            generateTypeScriptDefinitions()
+        }
+        @OptIn(ExperimentalWasmDsl::class)
+        wasmJs()
     }
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
+    if (!strictBuild || currentOs.isMacOsX) {
+        iosX64()
+        iosArm64()
+        iosSimulatorArm64()
+        macosX64()
+        macosArm64()
+    }
 
     cocoapods {
         summary = desc
@@ -38,10 +61,6 @@ kotlin {
             baseName = "standardbutton"
             isStatic = true
         }
-    }
-
-    androidTarget {
-        publishLibraryVariants("release")
     }
     
     sourceSets {
@@ -67,8 +86,8 @@ android {
         minSdk = 21
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
