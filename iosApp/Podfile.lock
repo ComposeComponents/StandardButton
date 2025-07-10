@@ -1,0 +1,16 @@
+PODS:
+  - standardbuttontest (0.0.1)
+
+DEPENDENCIES:
+  - standardbuttontest (from `../standardbuttontest`)
+
+EXTERNAL SOURCES:
+  standardbuttontest:
+    :path: "../standardbuttontest"
+
+SPEC CHECKSUMS:
+  standardbuttontest: d2e4887c03a1255c9278855f20df926ca9a402bf
+
+PODFILE CHECKSUM: 02637fd8253e86c2f8026ba96c20171780a4af42
+
+COCOAPODS: 1.15.2

@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "StandardButtonLib"
 include(":app")
 include(":standardbutton")
+include(":standardbuttontest")

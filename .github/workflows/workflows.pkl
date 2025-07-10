@@ -7,11 +7,6 @@ _modules = new Listing {
 workflows = new Listing {
     (import("package://components.emilym.cl/actions/actions@0.1.14#/build-kmp-lib.pkl")) {
         targets = new Listing {
-            target.buildIosMultiplatformTarget("standardbutton", "x64")
-            target.buildIosMultiplatformTarget("standardbutton", "arm64")
-            target.buildIosMultiplatformTarget("standardbutton", "simulatorArm64")
-            target.buildDarwinMultiplatformTarget("standardbutton", "macos", "x64")
-            target.buildDarwinMultiplatformTarget("standardbutton", "macos", "arm64")
             target.buildAndroidMultiplatformTarget("standardbutton")
             target.buildJvmMultiplatformTarget("standardbutton")
             target.buildWasmJsMultiplatformTarget("standardbutton")

@@ -1,4 +1,4 @@
-package cl.emilym.compose.standardbutton.app.ui.theme
+package cl.emilym.standardbutton.test.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

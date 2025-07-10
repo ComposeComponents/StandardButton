@@ -48,66 +48,6 @@ jobs:
     strategy:
       matrix:
         configuration:
-        - command: :standardbutton:linkPodReleaseFrameworkIosX64
-          os: macos-latest
-          output0:
-            key: standardbutton-iosX64-framework
-            name: standardbutton-iosX64.framework
-            location: ./standardbutton/build/bin/iosX64/podReleaseFramework/standardbutton.framework
-            needsZip: true
-          output1:
-            key: standardbutton-iosX64-klib
-            name: standardbutton-iosX64.klib
-            location: ./standardbutton/build/classes/kotlin/iosX64/main/klib/standardbutton.klib
-            needsZip: false
-        - command: :standardbutton:linkPodReleaseFrameworkIosArm64
-          os: macos-latest
-          output0:
-            key: standardbutton-iosArm64-framework
-            name: standardbutton-iosArm64.framework
-            location: ./standardbutton/build/bin/iosArm64/podReleaseFramework/standardbutton.framework
-            needsZip: true
-          output1:
-            key: standardbutton-iosArm64-klib
-            name: standardbutton-iosArm64.klib
-            location: ./standardbutton/build/classes/kotlin/iosArm64/main/klib/standardbutton.klib
-            needsZip: false
-        - command: :standardbutton:linkPodReleaseFrameworkIosSimulatorArm64
-          os: macos-latest
-          output0:
-            key: standardbutton-iosSimulatorArm64-framework
-            name: standardbutton-iosSimulatorArm64.framework
-            location: ./standardbutton/build/bin/iosSimulatorArm64/podReleaseFramework/standardbutton.framework
-            needsZip: true
-          output1:
-            key: standardbutton-iosSimulatorArm64-klib
-            name: standardbutton-iosSimulatorArm64.klib
-            location: ./standardbutton/build/classes/kotlin/iosSimulatorArm64/main/klib/standardbutton.klib
-            needsZip: false
-        - command: :standardbutton:linkPodReleaseFrameworkMacosX64
-          os: macos-latest
-          output0:
-            key: standardbutton-macosX64-framework
-            name: standardbutton-macosX64.framework
-            location: ./standardbutton/build/bin/macosX64/podReleaseFramework/standardbutton.framework
-            needsZip: true
-          output1:
-            key: standardbutton-macosX64-klib
-            name: standardbutton-macosX64.klib
-            location: ./standardbutton/build/classes/kotlin/macosX64/main/klib/standardbutton.klib
-            needsZip: false
-        - command: :standardbutton:linkPodReleaseFrameworkMacosArm64
-          os: macos-latest
-          output0:
-            key: standardbutton-macosArm64-framework
-            name: standardbutton-macosArm64.framework
-            location: ./standardbutton/build/bin/macosArm64/podReleaseFramework/standardbutton.framework
-            needsZip: true
-          output1:
-            key: standardbutton-macosArm64-klib
-            name: standardbutton-macosArm64.klib
-            location: ./standardbutton/build/classes/kotlin/macosArm64/main/klib/standardbutton.klib
-            needsZip: false
         - command: :standardbutton:assembleRelease
           os: ubuntu-latest
           output0:
@@ -210,36 +150,6 @@ jobs:
     strategy:
       matrix:
         artifact:
-        - key: standardbutton-iosX64-framework
-          name: standardbutton-iosX64.framework.zip
-          mimeType: application/zip
-        - key: standardbutton-iosX64-klib
-          name: standardbutton-iosX64.klib
-          mimeType: application/zip
-        - key: standardbutton-iosArm64-framework
-          name: standardbutton-iosArm64.framework.zip
-          mimeType: application/zip
-        - key: standardbutton-iosArm64-klib
-          name: standardbutton-iosArm64.klib
-          mimeType: application/zip
-        - key: standardbutton-iosSimulatorArm64-framework
-          name: standardbutton-iosSimulatorArm64.framework.zip
-          mimeType: application/zip
-        - key: standardbutton-iosSimulatorArm64-klib
-          name: standardbutton-iosSimulatorArm64.klib
-          mimeType: application/zip
-        - key: standardbutton-macosX64-framework
-          name: standardbutton-macosX64.framework.zip
-          mimeType: application/zip
-        - key: standardbutton-macosX64-klib
-          name: standardbutton-macosX64.klib
-          mimeType: application/zip
-        - key: standardbutton-macosArm64-framework
-          name: standardbutton-macosArm64.framework.zip
-          mimeType: application/zip
-        - key: standardbutton-macosArm64-klib
-          name: standardbutton-macosArm64.klib
-          mimeType: application/zip
         - key: standardbutton-android-aar
           name: standardbutton-android.aar
           mimeType: application/zip
