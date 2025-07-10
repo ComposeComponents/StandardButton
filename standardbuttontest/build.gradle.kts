@@ -31,8 +31,8 @@ kotlin {
     macosArm64()
 
     cocoapods {
-        summary = ""
-        homepage = findProperty("pom.url") as String
+        summary = "This is a summary"
+        homepage = "This is a homepage"
         version = findProperty("version") as String
         ios.deploymentTarget = "16.0"
         framework {

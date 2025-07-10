@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'standardbuttontest'
     spec.version                  = '0.0.1'
-    spec.homepage                 = ''
+    spec.homepage                 = 'This is a homepage'
     spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = ''
-    spec.summary                  = ''
+    spec.summary                  = 'This is a summary'
     spec.vendored_frameworks      = 'build/cocoapods/framework/standardbuttontest.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '16.0'
